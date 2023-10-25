@@ -1,7 +1,12 @@
 const std = @import("std");
 
 pub fn build(b: *std.Build) !void {
-    const target = b.standardTargetOptions(.{});
+    const target = b.standardTargetOptions(.{
+        .default_target = std.zig.CrossTarget{
+            .os_tag = .linux,
+            .abi = .musl,
+        },
+    });
     const optimize = b.standardOptimizeOption(.{});
 
     const libcap = b.dependency("libcap_zig", .{
