@@ -11,5 +11,5 @@ https://github.com/containers/bubblewrap/releases
 # apk add gcc musl-dev libcap-dev
 ./configure \
   --disable-selinux \
-  --enable-require-userns=yes \
+  --enable-require-userns=yes
 ```
