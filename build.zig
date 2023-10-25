@@ -3,7 +3,6 @@ const std = @import("std");
 pub fn build(b: *std.Build) !void {
     const target = b.standardTargetOptions(.{
         .default_target = std.zig.CrossTarget{
-            .os_tag = .linux,
             .abi = .musl,
         },
     });
@@ -21,7 +20,7 @@ pub fn build(b: *std.Build) !void {
         .optimize = optimize,
         .linkage = .static,
     });
-    exe.addIncludePath(.{.path = "include"});
+    exe.addIncludePath(.{ .path = "include" });
     exe.addCSourceFiles(&c_sources, &[_][]const u8{});
     exe.linkLibrary(libcap_lib);
     exe.linkLibC();
@@ -29,7 +28,7 @@ pub fn build(b: *std.Build) !void {
     b.installArtifact(exe);
 }
 
-const c_sources = [_][]const u8 {
+const c_sources = [_][]const u8{
     "src/bind-mount.c",
     "src/bubblewrap.c",
     "src/network.c",
