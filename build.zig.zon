@@ -1,0 +1,10 @@
+.{
+    .name = "bubblewrap-zig",
+    .version = "0.8.0",
+    .dependencies = .{
+        .libcap_zig = .{
+            .url = "https://api.github.com/repos/rsepassi/libcap-zig/tarball/de0d28f",
+            .hash = "1220840cd17207bf195d2bfdd1ce2aba52418dfca38fa6673e25af6d78fd78438e99",
+        },
+    },
+}
